@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container-main {
+  width: 100%;
+  max-width: 900px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.heading {
+  font-size: 28px;
+  color: white;
+  background: linear-gradient(90deg, #6200ee, #3700b3);
+  text-align: center;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.user-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.user-input[type="text"] {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.submit-button[type="submit"] {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #6200ee;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button[type="submit"]:hover {
+  background-color: #3700b3;
+  transform: scale(1.05);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  gap: 10px;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li span {
+  font-size: 16px;
+  color: #333;
+  flex: 1;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+li button {
+  padding: 8px 12px;
+  font-size: 14px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+li button:hover {
+  transform: scale(1.05);
+}
+
+li .edit {
+  background-color: #03dac6;
+}
+
+li .edit:hover {
+  background-color: #018786;
+}
+
+li .delete {
+  background-color: #ff5252;
+}
+
+li .delete:hover {
+  background-color: #c41c1c;
+}
+@media (max-width: 768px) {
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  li span {
+    margin-bottom: 10px;
+  }
+
+  input[type="text"],
+  button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  li {
+    padding: 10px 0;
+  }
+
+  input[type="text"],
+  button,
+  button[type="submit"] {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
