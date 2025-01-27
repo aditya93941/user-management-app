@@ -33,12 +33,11 @@ class App extends Component {
 
     if (newUser.trim()) {
       const newLocalUser = {
-        id: Date.now(), // Unique ID for local users
+        id: Date.now(),
         name: newUser,
         email: 'example@example.com',
       };
 
-      // Save the new user to localStorage
       const localUsers = JSON.parse(localStorage.getItem('newUsers')) || [];
       localUsers.push(newLocalUser);
       localStorage.setItem('newUsers', JSON.stringify(localUsers));
@@ -57,7 +56,6 @@ class App extends Component {
       const user = users[index];
 
       if (user.id > 100) {
-        // Update locally stored user
         user.name = newName;
         const localUsers = JSON.parse(localStorage.getItem('newUsers')) || [];
         const updatedLocalUsers = localUsers.map((localUser) =>
@@ -65,7 +63,6 @@ class App extends Component {
         );
         localStorage.setItem('newUsers', JSON.stringify(updatedLocalUsers));
       } else {
-        // Update API user
         try {
           const updatedUser = await updateUser(user.id, { ...user, name: newName });
           users[index] = updatedUser;
@@ -83,12 +80,10 @@ class App extends Component {
     const isLocalUser = id > 100;
 
     if (isLocalUser) {
-      // Delete locally stored user
       const localUsers = JSON.parse(localStorage.getItem('newUsers')) || [];
       const updatedLocalUsers = localUsers.filter((user) => user.id !== id);
       localStorage.setItem('newUsers', JSON.stringify(updatedLocalUsers));
     } else {
-      // Delete API user
       try {
         await deleteUser(id);
       } catch (error) {
